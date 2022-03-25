@@ -1,0 +1,30 @@
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addcourses']">Add Courses</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Course Code</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.cid}}</th>
+                <td>{{l.cname}}</td>
+                <td>{{l.ccode}}</td>
+                <td>{{l.status}}</td>
+                <td><a [routerLink]="['/sidebar/hr/courses/editcourses',l.cid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.cid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
+
+
+

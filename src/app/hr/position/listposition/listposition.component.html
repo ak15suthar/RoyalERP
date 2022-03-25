@@ -1,0 +1,28 @@
+<table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Position ID</th>
+      <th>Position Code</th>
+      <th>Position Name</th>
+      <th>Position Short</th>
+      <th>Position Level</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of list">
+      <th scope="row">{{l.posid}}</th>
+      <td>{{l.poscode}}</td>
+      <td>{{l.posname}}</td>
+      <td>{{l.posshort}}</td>
+      <td>{{l.poslevel}}</td>
+      <td>{{l.description}}</td>
+      <td>{{l.status}}</td>
+      <td><a [routerLink]="['/hr/positions/editposition',l.posid]"><i class="pi pi-user-edit"></i></a></td>
+      <td><a (click)="delete(l.posid)"><i class="pi pi-trash"></i></a></td>
+    </tr>
+  </tbody>
+</table>

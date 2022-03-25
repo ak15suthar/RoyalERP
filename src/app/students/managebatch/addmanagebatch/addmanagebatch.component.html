@@ -1,0 +1,47 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="bid">
+                                    <option value="" disabled>Choose Batch</option>
+                                    <option *ngFor="let e of listBatch" value="{{e.bid}}">{{e.bn}} &nbsp;|&nbsp; {{e.un}} &nbsp;|&nbsp; {{e.bt}} &nbsp;|&nbsp; {{e.st | date:'shortDate'}}
+                                    </option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                                <select class="browser-default custom-select mb-4" formControlName="sid">
+                                    <option value="" disabled>Choose Student</option>
+                                    <option *ngFor="let e of listStudent" value="{{e.sid}}">{{e.fn}}
+                                    </option>
+                                </select>
+
+                                <select class="browser-default custom-select mb-4" formControlName="status">
+                                    <option value="" disabled>Choose Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Block">Block</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="text-center text-md-left">
+                                <input type="submit" class="btn btn-lg blue btn-md large" value="Send">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

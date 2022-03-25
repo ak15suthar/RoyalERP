@@ -1,0 +1,49 @@
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addemployees']">Add Employees</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Code</th>
+                <th>Employee Name</th>
+                <th>Department ID</th>
+                <th>Position ID</th>
+                <th>DOJ</th>
+                <th>Qualification</th>
+                <th>Experience</th>
+                <th>Gender</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>End Date</th>
+                <th>Job Type</th>
+                <th>Images</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.empid}}</th>
+                <td>{{l.empcode}}</td>
+                <td>{{l.ename}}</td>
+                <td>{{l.did}}</td>
+                <td>{{l.posid}}</td>
+                <td>{{l.doj}}</td>
+                <td>{{l.qualification}}</td>
+                <td>{{l.experience}}</td>
+                <td>{{l.gender}}</td>
+                <td>{{l.contact}}</td>
+                <td>{{l.email}}</td>
+                <td>{{l.status}}</td>
+                <td>{{l.enddate}}</td>
+                <td>{{l.jobtype}}</td>
+                <td><img [src]="['http://localhost:3131/uploads/'+l.image]" style="width: 100px;height: 100px;" class="rounded"></td>
+                <td><a [routerLink]="['/sidebar/hr/employees/editemployees',l.empid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.empid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

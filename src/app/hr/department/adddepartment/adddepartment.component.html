@@ -1,0 +1,62 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-name" placeholder="Department Code"
+                                        formControlName="deptcode" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-email" placeholder="Department Name"
+                                        formControlName="deptname" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-phone" placeholder="Department Short"
+                                        formControlName="deptshort" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-company" placeholder="Department Level"
+                                        formControlName="deptlevel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <select class="browser-default custom-select mb-4" formControlName="status">
+                                        <option value="" disabled>Choose Status</option>
+                                        <option>Active</option>
+                                        <option>Block</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <textarea id="form-contact-message" placeholder="Position Description"
+                                        class="form-control md-textarea" formControlName="positiondesc"
+                                        rows="3"></textarea>
+                                </div>
+                                <div class="text-center text-md-left">
+                                    <input type="submit" class="btn btn-lg blue btn-md large" value="Send">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

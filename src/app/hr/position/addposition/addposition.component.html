@@ -1,0 +1,66 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-name" placeholder="Position Code"
+                                        formControlName="poscode" class="form-control">
+                                    <!-- <label for="form-contact-name" class="">Position Code</label> -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-email" placeholder="Position Name"
+                                        formControlName="posname" class="form-control">
+                                    <!-- <label for="form-contact-email" class="">Position Name</label> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-phone" placeholder="Position Short"
+                                        formControlName="posshort" class="form-control">
+                                    <!-- <label for="form-contact-phone" class="">Position Short</label> -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-company" placeholder="Position Level"
+                                        formControlName="poslevel" class="form-control">
+                                    <!-- <label for="form-contact-company" class="">Position Level</label> -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <select class="browser-default custom-select mb-4" formControlName="status">
+                                        <option value="" disabled>Choose Status</option>
+                                        <option>Active</option>
+                                        <option>Block</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <textarea id="form-contact-message" placeholder="Description"
+                                        class="form-control md-textarea" formControlName="description"
+                                        rows="3"></textarea>
+                                </div>
+                                <div class="text-center text-md-left">
+                                    <input type="submit" class="btn btn-lg blue btn-md large" value="Send">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

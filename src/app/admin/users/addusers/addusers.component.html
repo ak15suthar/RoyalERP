@@ -1,0 +1,71 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="empid">
+                                    <option value="" disabled>Choose Employee</option>
+                                    <option *ngFor="let e of employeeList" value="{{e.empid}}">{{e.ename}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-email" placeholder="Username"
+                                        formControlName="username" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-phone" placeholder="Password"
+                                        formControlName="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-company" placeholder="Role"
+                                        formControlName="role" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-company" placeholder="Editing"
+                                        formControlName="editiong" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="status">
+                                    <option value="" disabled>Choose Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Block">Block</option>
+                                </select>
+                                
+                                <select class="browser-default custom-select mb-4" formControlName="did">
+                                    <option value="" disabled>Choose Department</option>
+                                    <option *ngFor="let e of departmentList" value="{{e.did}}">{{e.deptname}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="text-center text-md-left">
+                                <input type="submit" class="btn btn-lg blue btn-md large" value="Send">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

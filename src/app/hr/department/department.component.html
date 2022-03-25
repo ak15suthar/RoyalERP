@@ -1,0 +1,33 @@
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./adddepartment']">Add Department</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Code</th>
+                <th>Department Name</th>
+                <th>Department Short</th>
+                <th>Department Level</th>
+                <th>Position Description</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.did}}</th>
+                <td>{{l.deptcode}}</td>
+                <td>{{l.deptname}}</td>
+                <td>{{l.deptshort}}</td>
+                <td>{{l.deptlevel}}</td>
+                <td>{{l.positiondesc}}</td>
+                <td>{{l.status}}</td>
+                <td><a [routerLink]="['/sidebar/hr/department/editdepartment',l.did]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.did)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

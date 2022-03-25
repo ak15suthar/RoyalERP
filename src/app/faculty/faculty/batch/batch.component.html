@@ -1,0 +1,86 @@
+<!-- <div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addbatch']">Add Batch</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Batch ID</th>
+                <th>Batch Code</th>
+                <th>Batch Name</th>
+                <th>Course ID</th>
+                <th>Employee ID</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.bid}}</th>
+                <td>{{l.bcode}}</td>
+                <td>{{l.bname}}</td>
+                <td>{{l.cid}}</td>
+                <td>{{l.uid}}</td>
+                <td>{{l.startdate}}</td>
+                <td>{{l.enddate}}</td>
+                <td>{{l.starttime}}</td>
+                <td>{{l.endtime}}</td>
+                <td>{{l.status}}</td>
+                <td><a [routerLink]="['/sidebar/faculty/batch/editbatch',l.bid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.bid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addbatch']">Add Batch</button>
+    <router-outlet></router-outlet>
+    <!-- <div class="card" *ngFor="let l of list">
+
+
+        <div class="card-body">
+
+            <h4 class="card-title"><a>{{l.bname}}</a></h4>
+            <h4 class="card-title"><a>{{l.type}}</a></h4>
+
+            <p class="card-text">{{l.starttime}} || {{l.endtime}}</p>
+            <a href="#" class="btn btn-primary">Button</a>
+
+        </div>
+
+    </div> -->
+
+
+</div>
+
+<div class="container">
+    <div class="container col-lg-12">
+        <div class="row">
+            <div *ngFor="let l of list" class="card text-white bg-primary mb-3 col-lg-3 m-3" style="max-width: 18rem;">
+                <div class="card-header" style="text-align: center;font-size: 30px;">{{l.bname}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">Type : {{l.type}}</h5>
+                    <h5 class="card-title">Time : {{l.starttime}} to {{l.endtime}}</h5>
+                    <!-- </div>
+                <div class="card-body"> -->
+
+                    <a [routerLink]="['/sidebar/faculty/studentbatch',l.bid]"><button class="btn btn-black"><i
+                                class="pi pi-users"></i></button></a>&nbsp;&nbsp;&nbsp;
+                    <a [routerLink]="['/sidebar/faculty/batch/editbatch',l.bid]"><button class="btn"><i
+                                class="pi pi-user-edit"></i></button></a>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-black" (click)="delete(l.bid)"><i
+                            class="pi pi-trash"></i></button>&nbsp;&nbsp;&nbsp;
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

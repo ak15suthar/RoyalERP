@@ -1,0 +1,28 @@
+<!-- <p>manageclub works!</p> -->
+<div class="container p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addmanageclub']">Add Manage Batch</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Batch Student ID</th>
+                <th>Batch ID</th>
+                <th>Student ID</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.bsid}}</th>
+                <td>{{l.bid}}</td>
+                <td>{{l.sid}}</td>
+                <td>{{l.status}}</td>
+                <td><a [routerLink]="['/sidebar/managebatch/editmanagebatch',l.bsid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.bsid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,12 @@
+<!-- <p style="margin-left: 120px;">faculty works!</p> -->
+
+<div *ngIf="emp" class="container p-4">
+    <h2>Hello, {{emp.username}}</h2>
+    <h2>Uid : {{emp.uid}}</h2>
+    <button type="button" class="btn btn-outline-info waves-effect" [routerLink]="['./batch']">Batch</button>
+    &nbsp;&nbsp;
+    <button type="button" class="btn btn-outline-info waves-effect" [routerLink]="['./session']">Session</button>
+    
+
+    <router-outlet></router-outlet>
+</div>

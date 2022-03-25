@@ -1,0 +1,38 @@
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addusers']">Add User</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Employee ID</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Editing</th>
+                <th>Status</th>
+                <th>Department ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.uid}}</th>
+                <th scope="row">{{l.empid}}</th>
+                <td>{{l.username}}</td>
+                <td>{{l.password}}</td>
+                <td>{{l.role}}</td>
+                <td>{{l.editiong}}</td>
+                <td>{{l.status}}</td>
+                <td>{{l.did}}</td>
+                <td><a [routerLink]="['/sidebar/admin/users/editusers',l.uid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.uid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
+
+
+

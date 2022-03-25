@@ -1,0 +1,41 @@
+<div class="container-fluid p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addsession']">Add Session</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>StartTime</th>
+                <th>EndTime</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of getSession">
+                <th scope="row">{{l.stime}}</th>
+                <td>{{l.etime}}</td>
+                <td>{{l.mon}}</td>
+                <td>{{l.tue}}</td>
+                <td>{{l.wed}}</td>
+                <td>{{l.thu}}</td>
+                <td>{{l.fri}}</td>
+                <td>{{l.sat}}</td>
+                <td>{{l.sun}}</td>
+                <td>{{l.status}}</td>
+                <td><a [routerLink]="['/sidebar/hr/courses/editcourses',l.cid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.cid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

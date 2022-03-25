@@ -1,0 +1,153 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-9 mb-md-0 mb-5">
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Start Time</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>End Time</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="time" class="form-control" mdbInput formControlName="stime">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <input type="time" class="form-control" mdbInput formControlName="etime">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Monday</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Tuesday</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select  class="browser-default custom-select mb-4" formControlName="mon">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="tue">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Wednesday</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Thrusday</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="wed">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="thu">
+                                            <option value="" disabled>Choose Batces</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Friday</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Saturday</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="fri">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="sat">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Sunday</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;"><b>Status</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="sun">
+                                            <option value="" disabled>Choose Batches</option>
+                                            <option *ngFor="let l of batchList" value="{{l.bid}}">{{l.bname}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <select class="browser-default custom-select mb-4" formControlName="status">
+                                            <option value="" disabled>Choose Status</option>
+                                            <option>Active</option>
+                                            <option>Block</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-md-left">
+                                    <button type="submit" class="btn btn-outline-primary waves-effect"
+                                        >Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

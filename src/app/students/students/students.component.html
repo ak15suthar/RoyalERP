@@ -1,0 +1,56 @@
+
+<div class="container p-3">
+    <button type="button" style="float: right;" class="btn btn-outline-info waves-effect "
+        [routerLink]="['./addstudents']">Add Student</button>
+    <router-outlet></router-outlet>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Code</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>DOB</th>
+                <th>DOJ</th>
+                <th>Qualification</th>
+                <th>College Name</th>
+                <th>Reference</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Inquiry Detail</th>
+                <th>Type of Student</th>
+                <th>Status</th>
+                <th>Images</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <th scope="row">{{l.sid}}</th>
+                <td>{{l.scode}}</td>
+                <td>{{l.fn}}</td>
+                <td>{{l.mn}}</td>
+                <td>{{l.ln}}</td>
+                <td>{{l.gender}}</td>
+                <td>{{l.address}}</td>
+                <td>{{l.dob}}</td>
+                <td>{{l.doj}}</td>
+                <td>{{l.qualification}}</td>
+                <td>{{l.collegename}}</td>
+                <td>{{l.ref}}</td>
+                <td>{{l.mobile}}</td>
+                <td>{{l.email}}</td>
+                <td>{{l.inqdetail}}</td>
+                <td>{{l.typeofstudent}}</td>
+                <td>{{l.status}}</td>
+                <td><img [src]="['http://localhost:3131/uploads/'+l.image]" style="width: 100px;height: 100px;" class="rounded"></td>
+                <td><a [routerLink]="['/sidebar/students/editstudents',l.sid]"><i class="pi pi-user-edit"></i></a></td>
+                <td><a (click)="delete(l.sid)"><i class="pi pi-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

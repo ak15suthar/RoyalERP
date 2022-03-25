@@ -1,0 +1,125 @@
+<section class="contact-section my-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card-body form">
+                    <h3 class="mt-4"><i class="far fa-registered"></i> Registration</h3>
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-name" placeholder="Employee Code"
+                                        formControlName="empcode" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="form-contact-email" placeholder="Employee Name"
+                                        formControlName="ename" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="did">
+                                    <option value="" disabled>Choose Department</option>
+                                    <option *ngFor="let dep of departmentList" value="{{dep.did}}">{{dep.deptname}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="posid">
+                                    <option value="" disabled>Choose position</option>
+                                    <option *ngFor="let pos of positionList" value="{{pos.posid}}">{{pos.posname}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="date" class="form-control" mdbInput formControlName="doj">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" class="form-control" placeholder="Enter qualification" mdbInput
+                                        formControlName="qualification">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" class="form-control" placeholder="EmployeeExperience" mdbInput
+                                        formControlName="experience">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" class="form-control" placeholder="Employee Contact" mdbInput
+                                        formControlName="contact">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="email" class="form-control" placeholder="Employee Email-ID" mdbInput
+                                        formControlName="email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="date" class="form-control" placeholder="Employee EndDate" mdbInput
+                                        formControlName="enddate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" class="form-control" placeholder="Employee JobType" mdbInput
+                                        formControlName="jobtype">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                <select class="browser-default custom-select mb-4" formControlName="gender">
+                                    <option value="" disabled>Choose Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Upload Image</label>
+                            <div class="col-md-9">
+                                <input type="file" id="file" (change)="handleFileInput($event.target.files)" required>
+                            </div>    
+                            <div *ngIf="imagePath">
+                                <img [src]="['https://localhost:3131/uploads/'+imagePath]" width="100px" height="100px" required>
+                            </div>
+                        </div>
+                        
+                        <select class="browser-default custom-select mb-4" formControlName="status">
+                            <option value="" disabled>Choose Status</option>
+                            <option>Active</option>
+                            <option>Block</option>
+                        </select>
+                        <div class="text-center text-md-left">
+                            <input type="submit" class="btn btn-lg blue btn-md large" value="Send">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
